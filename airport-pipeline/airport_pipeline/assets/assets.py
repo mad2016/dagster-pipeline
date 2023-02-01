@@ -30,7 +30,6 @@ def airline_csv_data(context: OpExecutionContext) -> None:
         "Statistics_Carriers_Names"
     ].str.replace(",", ";")
 
-    # return df
     bucket_name = os.environ.get("S3_BUCKET")
 
     for (Time_Year), group in df.groupby(["Time_Year"]):
